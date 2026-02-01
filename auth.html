@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AKANMS Sites | Premium Access</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#f4ce25",
+            "background-light": "#f8f8f5",
+            "background-dark": "#1a1625",
+          },
+          fontFamily: {
+            display: ["Manrope", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    .glass-card {
+      background: rgba(40, 32, 60, 0.45);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(244, 206, 37, 0.1);
+    }
+    .gold-glow:focus-within {
+      box-shadow: 0 0 18px rgba(244, 206, 37, 0.3);
+      border-color: #f4ce25;
+    }
+    .light-leak {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(244,206,37,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="bg-background-dark font-display min-h-screen relative overflow-hidden">
+
+  <div class="light-leak -top-40 -left-40"></div>
+  <div class="light-leak -bottom-40 -right-40"></div>
+
+  <main class="min-h-screen flex items-center justify-center px-4">
+    <div class="w-full max-w-[480px]">
+
+      <!-- Header -->
+      <div class="mb-8 text-center">
+        <h1 class="text-white text-3xl font-extrabold tracking-tight">
+          Experience Premium Rentals
+        </h1>
+        <p class="text-white/60 text-sm mt-2">
+          Access the world's most exclusive digital real estate
+        </p>
+      </div>
+
+      <!-- Card -->
+      <div class="glass-card rounded-xl shadow-2xl">
+
+        <!-- Tabs -->
+        <div class="flex justify-center gap-14 border-b border-white/10 px-6">
+          <button id="signinTab"
+            class="tab-btn border-b-[3px] border-primary text-white py-4 font-bold text-sm">
+            Sign In
+          </button>
+          <button id="signupTab"
+            class="tab-btn border-b-[3px] border-transparent text-white/40 py-4 font-bold text-sm hover:text-white">
+            Sign Up
+          </button>
+        </div>
+
+        <!-- SIGN IN -->
+        <div id="signinForm" class="px-6 py-6 space-y-6">
+
+          <div class="gold-glow rounded-xl">
+            <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
+              Email Address
+            </p>
+            <input
+              type="email"
+              placeholder="name@company.com"
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
+          </div>
+
+          <div class="gold-glow rounded-xl">
+            <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
+              Password
+            </p>
+            <input
+              type="password"
+              placeholder="••••••••"
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
+          </div>
+
+          <div class="flex justify-between text-xs">
+            <label class="flex items-center gap-2 text-white/50">
+              <input type="checkbox" class="rounded bg-white/10 border-white/20 text-primary" />
+              Remember me
+            </label>
+            <a href="#" class="text-primary hover:underline font-bold">
+              Forgot password?
+            </a>
+          </div>
+
+          <button
+            class="w-full h-14 rounded-xl bg-primary text-background-dark font-extrabold tracking-wide uppercase shadow-[0_0_25px_rgba(244,206,37,0.35)] hover:shadow-[0_0_35px_rgba(244,206,37,0.5)] transition-all active:scale-[0.97]">
+            Access Marketplace
+          </button>
+        </div>
+
+        <!-- SIGN UP -->
+        <div id="signupForm" class="hidden px-6 py-6 space-y-6">
+
+          <div class="gold-glow rounded-xl">
+            <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
+              Full Name
+            </p>
+            <input
+              type="text"
+              placeholder="John Doe"
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
+          </div>
+
+          <div class="gold-glow rounded-xl">
+            <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
+              Email Address
+            </p>
+            <input
+              type="email"
+              placeholder="name@company.com"
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
+          </div>
+
+          <div class="gold-glow rounded-xl">
+            <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
+              Password
+            </p>
+            <input
+              type="password"
+              placeholder="••••••••"
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
+          </div>
+
+          <div class="gold-glow rounded-xl">
+            <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
+              Confirm Password
+            </p>
+            <input
+              type="password"
+              placeholder="••••••••"
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
+          </div>
+
+          <button
+            class="w-full h-14 rounded-xl bg-primary text-background-dark font-extrabold tracking-wide uppercase shadow-[0_0_25px_rgba(244,206,37,0.35)] hover:shadow-[0_0_35px_rgba(244,206,37,0.5)] transition-all active:scale-[0.97]">
+            Create Account
+          </button>
+        </div>
+
+      </div>
+
+      <p class="text-center text-white/40 text-xs mt-6">
+        By continuing, you agree to our
+        <a href="#" class="underline hover:text-primary">Terms of Service</a>
+      </p>
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script>
+    const signinTab = document.getElementById("signinTab");
+    const signupTab = document.getElementById("signupTab");
+    const signinForm = document.getElementById("signinForm");
+    const signupForm = document.getElementById("signupForm");
+
+    function switchTab(active, inactive, show, hide) {
+      active.classList.add("border-primary", "text-white");
+      active.classList.remove("text-white/40");
+
+      inactive.classList.remove("border-primary", "text-white");
+      inactive.classList.add("text-white/40");
+
+      show.classList.remove("hidden");
+      hide.classList.add("hidden");
+    }
+
+    signinTab.onclick = () =>
+      switchTab(signinTab, signupTab, signinForm, signupForm);
+
+    signupTab.onclick = () =>
+      switchTab(signupTab, signinTab, signupForm, signinForm);
+  </script>
+
+</body>
+</html>

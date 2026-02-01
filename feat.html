@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Platform Features &amp; Benefits | AKANMS Sites</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#f4ce25",
+                "background-light": "#f8f8f5",
+                "background-dark": "#1a0b2e", // Deep royal purple background
+              },
+              fontFamily: {
+                "display": ["Manrope", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(244, 206, 37, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .glass-card:hover {
+            border-color: rgba(244, 206, 37, 0.6);
+            box-shadow: 0 0 20px rgba(244, 206, 37, 0.15);
+            transition: all 0.3s ease;
+        }
+        .gold-glow {
+            text-shadow: 0 0 15px rgba(244, 206, 37, 0.4);
+        }
+        .bg-gradient-purple {
+            background: radial-gradient(circle at top left, #2d1354 0%, #1a0b2e 50%, #1a0b2e 100%);
+        }
+        .light-leak-right {
+            background: radial-gradient(circle at right, rgba(244, 206, 37, 0.08) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary/30">
+<div class="relative min-h-screen w-full flex flex-col overflow-x-hidden bg-gradient-purple">
+<!-- Light leak decorative elements -->
+<div class="fixed top-0 right-0 w-full h-full pointer-events-none light-leak-right z-0"></div>
+<div class="layout-container flex h-full grow flex-col relative z-10">
+<!-- Navigation -->
+<div class="px-4 md:px-20 lg:px-40 flex justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 md:px-10 py-4 glass-card rounded-xl">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-extrabold leading-tight tracking-tight">AKANMS <span class="text-primary">SITES</span></h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-white/80 hover:text-primary text-sm font-medium transition-colors" href="market.html">Marketplace</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary pb-1" href="feat.html">Features</a>
+<a class="text-white/80 hover:text-primary text-sm font-medium transition-colors" href="price.html">Pricing</a>
+<a class="text-white/80 hover:text-primary text-sm font-medium transition-colors" href="support.html">Support</a>
+</div>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-background-dark text-sm font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+<span class="truncate">Get Started</span>
+</button>
+</div>
+</header>
+</div>
+</div>
+<!-- Hero Section -->
+<div class="px-4 md:px-20 lg:px-40 flex justify-center py-10 md:py-20">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1 text-center">
+<div class="@container">
+<div class="flex flex-col gap-6 items-center justify-center">
+<div class="flex flex-col gap-4">
+<h1 class="text-primary text-5xl md:text-7xl font-black leading-tight tracking-[-0.033em] gold-glow uppercase">
+                                    The AKANMS Standard
+                                </h1>
+<p class="text-white/70 text-base md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
+                                    Experience the future of digital presence with our premium website rental marketplace, engineered for elite rapid deployment and military-grade security.
+                                </p>
+</div>
+<div class="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mt-4"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Features Grid Section -->
+<div class="px-4 md:px-20 lg:px-40 flex justify-center py-10">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<h2 class="text-white text-3xl font-bold leading-tight tracking-tight px-4 pb-8 text-center">Core Platform Features</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+<!-- Feature 1 -->
+<div class="flex flex-col gap-4 rounded-xl glass-card p-8 group">
+<div class="text-primary mb-2">
+<span class="material-symbols-outlined !text-4xl">shield</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Secure Sandbox Preview</h3>
+<p class="text-white/60 text-sm leading-relaxed">Preview your digital assets in a hermetically sealed, secure environment before deployment. Complete peace of mind for every launch.</p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="flex flex-col gap-4 rounded-xl glass-card p-8 group">
+<div class="text-primary mb-2">
+<span class="material-symbols-outlined !text-4xl">bolt</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">24-Hour Rapid Deployment</h3>
+<p class="text-white/60 text-sm leading-relaxed">Time is your most valuable asset. Our streamlined infrastructure allows you to go from selection to live-production in under 24 hours.</p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="flex flex-col gap-4 rounded-xl glass-card p-8 group">
+<div class="text-primary mb-2">
+<span class="material-symbols-outlined !text-4xl">monetization_on</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Crypto-Native Payments</h3>
+<p class="text-white/60 text-sm leading-relaxed">Built for the decentralized economy. We accept all major cryptocurrencies for seamless, borderless, and private transactions.</p>
+</div>
+</div>
+<!-- Feature 4 -->
+<div class="flex flex-col gap-4 rounded-xl glass-card p-8 group">
+<div class="text-primary mb-2">
+<span class="material-symbols-outlined !text-4xl">cloud_done</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Premium Managed Hosting</h3>
+<p class="text-white/60 text-sm leading-relaxed">High-performance architecture managed by elite DevOps teams. Guaranteed 99.9% uptime with global edge delivery nodes.</p>
+</div>
+</div>
+<!-- Feature 5 -->
+<div class="flex flex-col gap-4 rounded-xl glass-card p-8 group">
+<div class="text-primary mb-2">
+<span class="material-symbols-outlined !text-4xl">support_agent</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">Dedicated Support</h3>
+<p class="text-white/60 text-sm leading-relaxed">24/7 priority access to our specialized technical concierge. No bots, no waiting—just direct expert assistance when you need it.</p>
+</div>
+</div>
+<!-- Feature 6 -->
+<div class="flex flex-col gap-4 rounded-xl glass-card p-8 group">
+<div class="text-primary mb-2">
+<span class="material-symbols-outlined !text-4xl">search_check</span>
+</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">SEO Optimized Templates</h3>
+<p class="text-white/60 text-sm leading-relaxed">Our templates aren't just beautiful—they're built for visibility. High-conversion structures that search engines love out of the box.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<div class="px-4 md:px-20 lg:px-40 flex justify-center py-20">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<div class="glass-card rounded-3xl p-10 md:p-20 relative overflow-hidden text-center">
+<!-- Decorative background glow for CTA -->
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="relative z-10 flex flex-col items-center gap-8">
+<div class="flex flex-col gap-4">
+<h2 class="text-white text-4xl md:text-5xl font-black leading-tight tracking-tight max-w-2xl">
+                                    Ready to elevate your online presence?
+                                </h2>
+<p class="text-white/70 text-lg max-w-xl mx-auto">
+                                    Join the AKANMS marketplace today and secure your position in the premium digital landscape.
+                                </p>
+</div>
+<button class="flex min-w-[240px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-8 bg-primary text-background-dark text-lg font-extrabold shadow-2xl shadow-primary/30 hover:scale-105 active:scale-95 transition-all">
+<span class="truncate">Explore the Marketplace</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="px-4 md:px-20 lg:px-40 py-10 border-t border-white/5 bg-black/20">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3 text-white/50">
+<div class="size-5">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<p class="text-sm font-medium">© 2024 AKANMS Sites. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-white/40 hover:text-white text-xs transition-colors" href="#">Privacy Policy</a>
+<a class="text-white/40 hover:text-white text-xs transition-colors" href="#">Terms of Service</a>
+<a class="text-white/40 hover:text-white text-xs transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

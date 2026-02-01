@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Premium Rental Marketplace | AKANMS Sites</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cfb43a",
+                        "background-dark": "#0f0817", // Deeper purple for better contrast
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            50% { transform: translate(100px, 50px) scale(1.2); opacity: 0.6; }
+            100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+        }
+        .animate-flare {
+            animation: float 15s ease-in-out infinite;
+        }
+        .glass-card {
+            background: rgba(45, 27, 65, 0.4);
+            backdrop-filter: blur(24px);-webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(207, 180, 58, 0.1);
+        }
+        .glass-sidebar {
+            background: rgba(22, 13, 33, 0.6);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-nav {
+            background: rgba(15, 8, 23, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(207, 180, 58, 0.15);
+        }
+        .bg-flare {
+            background: radial-gradient(circle at center, rgba(207, 180, 58, 0.15) 0%, rgba(138, 43, 226, 0.1) 40%, rgba(15, 8, 23, 0) 70%);
+        }
+        .gold-glow {
+            box-shadow: 0 0 15px rgba(207, 180, 58, 0.2);
+            border: 1px solid rgba(207, 180, 58, 0.5);
+        }
+        .gold-glow:focus-within {
+            box-shadow: 0 0 25px rgba(207, 180, 58, 0.4);
+            border: 1px solid rgba(207, 180, 58, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white min-h-screen relative overflow-x-hidden">
+<div class="fixed top-[-20%] left-[-10%] w-[60%] h-[60%] bg-flare pointer-events-none animate-flare blur-[80px]"></div>
+<div class="fixed bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-flare pointer-events-none animate-flare blur-[80px]" style="animation-delay: -5s;"></div>
+<div class="fixed top-[40%] left-[30%] w-[30%] h-[30%] bg-flare pointer-events-none animate-flare blur-[100px]" style="animation-delay: -10s; opacity: 0.1;"></div>
+<div class="layout-container flex h-full grow flex-col relative z-10">
+<header class="glass-nav sticky top-0 z-50 px-6 lg:px-12 py-4">
+<div class="flex items-center justify-between max-w-[1440px] mx-auto gap-8">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-4xl">diamond</span>
+<h1 class="text-white text-xl font-extrabold leading-tight tracking-tighter uppercase">AKANMS <span class="text-primary">Sites</span></h1>
+</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-white font-semibold text-sm border-b-2 border-primary pb-1" href="market.html">Marketplace</a>
+<a class="text-white/60 hover:text-primary text-sm font-semibold transition-colors" href="custom.html">Custom builds</a>
+<a class="text-white/60 hover:text-primary text-sm font-semibold transition-colors" href="price.html">Pricing</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="hidden md:flex flex-col min-w-80 max-w-md">
+<div class="flex w-full items-stretch rounded-xl h-11 gold-glow bg-black/40 transition-all duration-300">
+<div class="text-primary flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full border-none bg-transparent focus:ring-0 h-full placeholder:text-white/30 px-4 text-sm font-medium" placeholder="Search premium templates..."/>
+</div>
+</div>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-xl h-11 px-5 bg-primary text-[#0f0817] text-sm font-bold transition-all hover:shadow-[0_0_20px_rgba(207,180,58,0.5)] active:scale-95">
+                    Client Login
+                </button>
+</div>
+</div>
+</header>
+<div class="flex flex-1 w-full max-w-[1440px] mx-auto relative">
+<aside class="hidden lg:flex w-72 flex-col gap-8 p-8 glass-sidebar sticky top-20 h-[calc(100vh-80px)] overflow-y-auto">
+<div>
+<h3 class="text-primary text-xs font-bold uppercase tracking-widest mb-6">Template Categories</h3>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 p-3 rounded-xl bg-primary/10 text-primary border border-primary/20" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-bold text-sm">All Designs</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-white/60 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-medium text-sm">E-commerce</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-white/60 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">palette</span>
+<span class="font-medium text-sm">Portfolio</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-white/60 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-medium text-sm">Landing Pages</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-white/60 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">business</span>
+<span class="font-medium text-sm">Corporate</span>
+</a>
+</nav>
+</div>
+<div>
+<h3 class="text-primary text-xs font-bold uppercase tracking-widest mb-6">Monthly Range</h3>
+<div class="px-2">
+<input class="w-full accent-primary bg-white/10 rounded-lg h-1 appearance-none cursor-pointer" max="200" min="0" step="10" type="range"/>
+<div class="flex justify-between mt-3 text-[10px] font-bold text-white/40">
+<span>$0</span>
+<span>$200/mo</span>
+</div>
+</div>
+</div>
+<div class="mt-auto">
+<div class="glass-card rounded-2xl p-6 border-primary/30">
+<p class="text-primary font-bold text-xs mb-2">Need a custom site?</p>
+<p class="text-white/60 text-xs leading-relaxed mb-4">Our artisans can craft a unique experience just for you.</p>
+<button class="w-full py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-xs font-bold hover:bg-white/10 transition-all">Enquire Now</button>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-6 lg:p-12 overflow-x-hidden">
+<div class="mb-12">
+<span class="text-primary font-bold tracking-[0.3em] text-xs uppercase block mb-3">Curated Marketplace</span>
+<h1 class="text-4xl md:text-5xl font-black text-white leading-tight mb-4">
+                    World-Class Design, <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#fef3c7]">Monthly Flexibility.</span>
+</h1>
+<p class="text-white/50 text-lg max-w-xl">
+                    High-end digital storefronts and experiences available as a service. No upfront development costs.
+                </p>
+</div>
+<div class="mb-16">
+<div class="glass-card rounded-[2.5rem] overflow-hidden border-primary/30 flex flex-col xl:flex-row items-stretch p-3 group">
+<div class="w-full xl:w-7/12 relative aspect-video xl:aspect-auto min-h-[400px] overflow-hidden rounded-[2rem]">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105" data-alt="Featured design" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBa_SepaRRaA7yhtJqoflQANi-lYeuMM98jj-WF3TakM_LDRd7QzDqQhH0wQLTstdMNG8SUnintzb1Q0sjwDCW5NNlsKDy5-b-8FRJwfhmRNQxZnG3y-1I4I7pknhKmFYEdui-s7iK8Q_Pr_80iLhm87LF_sk3HhFrUgs6b_fdy_u08UEVFxH9-2NhF0bwkvW7Zw-WsI96Pe_Uhbx49Yfk-AsLGxhLnW0D3-KfBnWzqHpRU4fph98bvpxDD39MKeBWXYkiNGRFP7IY");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0f0817] via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-6 left-6 px-5 py-2 rounded-full bg-gradient-to-r from-primary to-[#b3982d] text-[#0f0817] flex items-center gap-2 shadow-[0_4px_20px_rgba(0,0,0,0.4)]">
+<span class="material-symbols-outlined text-sm font-bold">verified</span>
+<span class="text-xs font-black uppercase tracking-widest">Featured Choice</span>
+</div>
+</div>
+<div class="flex-1 p-10 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-4">
+<div class="flex">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+</div>
+<span class="text-white/40 text-[10px] font-bold uppercase tracking-widest">Top Rated Architecture</span>
+</div>
+<h3 class="text-white text-4xl font-extrabold mb-4 leading-none">Elite Commerce Pro</h3>
+<p class="text-white/50 text-base mb-10 leading-relaxed max-w-md">
+                            The gold standard for luxury retail. Featuring liquid-smooth transitions, headless CMS integration, and premium typography.
+                        </p>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mt-auto">
+<div>
+<span class="text-white/40 text-[10px] font-black uppercase tracking-[0.2em]">Monthly Rental</span>
+<div class="flex items-baseline gap-1">
+<p class="text-primary text-5xl font-black tracking-tighter">$129</p>
+<p class="text-white/40 font-bold text-lg">/mo</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="h-14 px-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all font-bold text-sm tracking-wide">Live Preview</button>
+<button class="h-14 px-10 rounded-2xl bg-primary text-[#0f0817] font-black text-sm uppercase tracking-widest shadow-[0_10px_30px_rgba(207,180,58,0.3)] hover:translate-y-[-2px] transition-all">Rent This Site</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="glass-card rounded-[2rem] p-4 flex flex-col gap-5 group transition-all duration-500 hover:border-primary/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="Template 1" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhbyncfU-mWABIZJuZjZPPDqD9TpTtPeLcAyrr6zuDkfyMwITwBiQFzILxzH7C5WzXAClnHySyrbnKEt2MpYv73AYo2WoLzwhk8K4YgmeJkN0fQZIeri2ORSzUbEzFIP6RN2TVUbPNwyG5ySXBBX8PRL2trr9gfwHZEKj-f79OI8zjT6XDBjTUbbD6h6ZqlfuXbjAulK8l3KM3KoFTBPslUscoDNTwsu4Jm1AihrQJ-6HriEak3sQSYHrQWwD8Wx4WlEzhkycthXo");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute top-4 right-4 bg-[#0f0817]/80 backdrop-blur-xl px-4 py-2 rounded-xl border border-primary/30">
+<span class="text-primary text-xs font-black tracking-widest uppercase block mb-1">Monthly Rental</span>
+<p class="text-white text-lg font-black tracking-tighter">$49<span class="text-white/40 text-[10px]">/mo</span></p>
+</div>
+</div>
+<div class="px-2 pb-2">
+<div class="flex justify-between items-center mb-3">
+<h4 class="text-white text-2xl font-bold tracking-tight">Visualist Portfolio</h4>
+<div class="size-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer hover:bg-primary/20 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</div>
+</div>
+<p class="text-white/50 text-sm mb-6 leading-relaxed line-clamp-2">A high-fashion portfolio layout designed for photographers and motion artists who demand perfection.</p>
+<div class="flex gap-3">
+<button class="flex-1 h-12 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/10 transition-all">Preview</button>
+<button class="flex-1 h-12 rounded-xl bg-primary text-[#0f0817] text-xs font-black uppercase tracking-widest hover:shadow-[0_5px_15px_rgba(207,180,58,0.3)] transition-all">Rent Now</button>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-[2rem] p-4 flex flex-col gap-5 group transition-all duration-500 hover:border-primary/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="Template 2" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDe00MLYqtvUyIZbmzmudoFuo13xFS842DKULTRACAeXJr3gCUuMy_vJiI5_rHM9rxIRTL-XcGij_APEJkKN4rT0zAeG_5y3CYFCiQyV464eYDKmxwTwP52YE6B9V6-gLV0fFBos-t67khMJaXXnrr4bhMTfZcFRK21RBkrLwiksHJsNQIya75eYt2g2bL4_PSNj3IkZsnHzvg4zmgRmy3Cr7tt52UAahj_a8JEU5GuzVEZELBvLGKuoDWetC70LplkD2jYc9Mn-dQ");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute top-4 right-4 bg-[#0f0817]/80 backdrop-blur-xl px-4 py-2 rounded-xl border border-primary/30">
+<span class="text-primary text-xs font-black tracking-widest uppercase block mb-1">Monthly Rental</span>
+<p class="text-white text-lg font-black tracking-tighter">$79<span class="text-white/40 text-[10px]">/mo</span></p>
+</div>
+</div>
+<div class="px-2 pb-2">
+<div class="flex justify-between items-center mb-3">
+<h4 class="text-white text-2xl font-bold tracking-tight">GlobalCorp Elite</h4>
+<div class="size-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer hover:bg-primary/20 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</div>
+</div>
+<p class="text-white/50 text-sm mb-6 leading-relaxed line-clamp-2">The ultimate corporate hub with integrated analytics and client management portals.</p>
+<div class="flex gap-3">
+<button class="flex-1 h-12 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/10 transition-all">Preview</button>
+<button class="flex-1 h-12 rounded-xl bg-primary text-[#0f0817] text-xs font-black uppercase tracking-widest hover:shadow-[0_5px_15px_rgba(207,180,58,0.3)] transition-all">Rent Now</button>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-[2rem] p-4 flex flex-col gap-5 group transition-all duration-500 hover:border-primary/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="Template 3" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDF-Uz1C2TszCFDPMfD39BVbpr5yaFmAqUPyMOYIs-MXj3LnGsCld-bg08hKoNGxkvnlBBvspM09dKeexBeD3kTD0AkixGZXIIfAYd6db74luC1dyAd4gdeFg3BfdYvfNIiXkSyaXA3VcOiG391TdyoP1P6l0-C92BKI38BRzmMw7SAs6LCoZw4TvG3TXUQKqSvnxZpRINmL74cul8nkYFhskSo3WpL9ZZ4h292Pt-iQR1_1tMoXy282vyFJEcduQROJ_4BYJaNMOQ");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute top-4 right-4 bg-[#0f0817]/80 backdrop-blur-xl px-4 py-2 rounded-xl border border-primary/30">
+<span class="text-primary text-xs font-black tracking-widest uppercase block mb-1">Monthly Rental</span>
+<p class="text-white text-lg font-black tracking-tighter">$65<span class="text-white/40 text-[10px]">/mo</span></p>
+</div>
+</div>
+<div class="px-2 pb-2">
+<div class="flex justify-between items-center mb-3">
+<h4 class="text-white text-2xl font-bold tracking-tight">Aura Wellness</h4>
+<div class="size-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer hover:bg-primary/20 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</div>
+</div>
+<p class="text-white/50 text-sm mb-6 leading-relaxed line-clamp-2">Serene and minimal interface designed for health practitioners and lifestyle brands.</p>
+<div class="flex gap-3">
+<button class="flex-1 h-12 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/10 transition-all">Preview</button>
+<button class="flex-1 h-12 rounded-xl bg-primary text-[#0f0817] text-xs font-black uppercase tracking-widest hover:shadow-[0_5px_15px_rgba(207,180,58,0.3)] transition-all">Rent Now</button>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-[2rem] p-4 flex flex-col gap-5 group transition-all duration-500 hover:border-primary/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-110" data-alt="Template 4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbkKzkM8vlip4Q1EeCkijxgMnCvWgPi58ZWrqvTmIka6zZ-WBJDs4dTMlaCJTd-LEv2H6dhUsqEoM_BXw6-0xJlN8ID9-YlmofVGRcWET913QdXfpGQEtnHYKGxn0FSIF7SJrNJSe6AODwBZjHOeoWhGyuKO2pfrFyjDP_-WQtcTxyfynk0SAVogkHab1f3lkiXjhmQNcm6xi0jzzyN2WetvAYAggtbi8JGmHTPyTvnbngwHCJKEvRFIzPwidpveuJPEd9e8abvHY");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute top-4 right-4 bg-[#0f0817]/80 backdrop-blur-xl px-4 py-2 rounded-xl border border-primary/30">
+<span class="text-primary text-xs font-black tracking-widest uppercase block mb-1">Monthly Rental</span>
+<p class="text-white text-lg font-black tracking-tighter">$89<span class="text-white/40 text-[10px]">/mo</span></p>
+</div>
+</div>
+<div class="px-2 pb-2">
+<div class="flex justify-between items-center mb-3">
+<h4 class="text-white text-2xl font-bold tracking-tight">Apex Dashboard</h4>
+<div class="size-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer hover:bg-primary/20 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</div>
+</div>
+<p class="text-white/50 text-sm mb-6 leading-relaxed line-clamp-2">Futuristic fintech dashboard with dark mode optimization and real-time visualization.</p>
+<div class="flex gap-3">
+<button class="flex-1 h-12 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/10 transition-all">Preview</button>
+<button class="flex-1 h-12 rounded-xl bg-primary text-[#0f0817] text-xs font-black uppercase tracking-widest hover:shadow-[0_5px_15px_rgba(207,180,58,0.3)] transition-all">Rent Now</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-20">
+<button class="group flex items-center gap-3 h-14 px-12 rounded-2xl glass-card border-primary/40 text-primary font-black uppercase tracking-widest hover:bg-primary/10 transition-all">
+                    Load More Curations
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-y-1">expand_more</span>
+</button>
+</div>
+</main>
+</div>
+<footer class="mt-auto py-20 px-6 glass-nav border-t border-primary/20">
+<div class="max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 text-primary mb-8">
+<span class="material-symbols-outlined text-3xl">diamond</span>
+<h2 class="text-white text-xl font-extrabold tracking-tighter uppercase">AKANMS</h2>
+</div>
+<p class="text-white/40 text-sm leading-relaxed mb-8">
+                        Revolutionizing digital ownership. We provide premium web architecture as a subscription, empowering brands to evolve without barriers.
+                    </p>
+<div class="flex gap-4">
+<div class="size-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-primary hover:border-primary/40 cursor-pointer transition-all"><span class="material-symbols-outlined text-lg">public</span></div>
+<div class="size-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-primary hover:border-primary/40 cursor-pointer transition-all"><span class="material-symbols-outlined text-lg">rss_feed</span></div>
+</div>
+</div>
+<div>
+<h4 class="text-primary text-xs font-black uppercase tracking-widest mb-8">The Gallery</h4>
+<ul class="flex flex-col gap-5 text-white/60 text-sm font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">Signature Series</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">New Additions</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Industry Favorites</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Bespoke Requests</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary text-xs font-black uppercase tracking-widest mb-8">Concierge</h4>
+<ul class="flex flex-col gap-5 text-white/60 text-sm font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">Technical Support</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Customization</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Billing Inquiry</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Partner Program</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary text-xs font-black uppercase tracking-widest mb-8">Exclusives</h4>
+<p class="text-white/40 text-xs mb-6 font-medium">Be the first to see our newest architectural releases.</p>
+<div class="flex flex-col gap-3">
+<input class="w-full bg-white/5 border-white/10 rounded-xl px-5 h-12 text-sm focus:ring-primary focus:border-primary" placeholder="Your private email" type="email"/>
+<button class="w-full h-12 bg-primary text-[#0f0817] rounded-xl font-black text-xs uppercase tracking-[0.2em] shadow-[0_5px_15px_rgba(207,180,58,0.2)]">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-[10px] font-bold uppercase tracking-widest">
+<p>© 2024 AKANMS Sites. Digital Excellence Guaranteed.</p>
+<div class="flex gap-10">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Lease</a>
+<a class="hover:text-white transition-colors" href="#">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
