@@ -17,7 +17,6 @@
         extend: {
           colors: {
             primary: "#f4ce25",
-            "background-light": "#f8f8f5",
             "background-dark": "#1a1625",
           },
           fontFamily: {
@@ -34,10 +33,12 @@
       backdrop-filter: blur(14px);
       border: 1px solid rgba(244, 206, 37, 0.1);
     }
+
     .gold-glow:focus-within {
       box-shadow: 0 0 18px rgba(244, 206, 37, 0.3);
       border-color: #f4ce25;
     }
+
     .light-leak {
       position: absolute;
       width: 600px;
@@ -45,11 +46,28 @@
       background: radial-gradient(circle, rgba(244,206,37,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
+
+    /* Tabs */
+    .tab-btn {
+      border-bottom: 3px solid transparent;
+      color: rgba(255, 255, 255, 0.4);
+      transition: all 0.25s ease;
+    }
+
+    .tab-btn:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .active-tab {
+      border-bottom-color: #f4ce25;
+      color: #ffffff;
+    }
   </style>
 </head>
 
 <body class="bg-background-dark font-display min-h-screen relative overflow-hidden">
 
+  <!-- Background glow -->
   <div class="light-leak -top-40 -left-40"></div>
   <div class="light-leak -bottom-40 -right-40"></div>
 
@@ -71,17 +89,24 @@
 
         <!-- Tabs -->
         <div class="flex justify-center gap-14 border-b border-white/10 px-6">
-          <button id="signinTab"
-            class="tab-btn border-b-[3px] border-primary text-white py-4 font-bold text-sm">
+          <button
+            id="signinTab"
+            aria-selected="true"
+            class="tab-btn active-tab py-4 font-bold text-sm"
+          >
             Sign In
           </button>
-          <button id="signupTab"
-            class="tab-btn border-b-[3px] border-transparent text-white/40 py-4 font-bold text-sm hover:text-white">
+
+          <button
+            id="signupTab"
+            aria-selected="false"
+            class="tab-btn py-4 font-bold text-sm"
+          >
             Sign Up
           </button>
         </div>
 
-        <!-- SIGN IN -->
+        <!-- SIGN IN FORM -->
         <div id="signinForm" class="px-6 py-6 space-y-6">
 
           <div class="gold-glow rounded-xl">
@@ -91,7 +116,8 @@
             <input
               type="email"
               placeholder="name@company.com"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20"
+            />
           </div>
 
           <div class="gold-glow rounded-xl">
@@ -101,7 +127,8 @@
             <input
               type="password"
               placeholder="••••••••"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20"
+            />
           </div>
 
           <div class="flex justify-between text-xs">
@@ -115,12 +142,13 @@
           </div>
 
           <button
-            class="w-full h-14 rounded-xl bg-primary text-background-dark font-extrabold tracking-wide uppercase shadow-[0_0_25px_rgba(244,206,37,0.35)] hover:shadow-[0_0_35px_rgba(244,206,37,0.5)] transition-all active:scale-[0.97]">
+            class="w-full h-14 rounded-xl bg-primary text-background-dark font-extrabold tracking-wide uppercase shadow-[0_0_25px_rgba(244,206,37,0.35)] hover:shadow-[0_0_35px_rgba(244,206,37,0.5)] transition-all active:scale-[0.97]"
+          >
             Access Marketplace
           </button>
         </div>
 
-        <!-- SIGN UP -->
+        <!-- SIGN UP FORM -->
         <div id="signupForm" class="hidden px-6 py-6 space-y-6">
 
           <div class="gold-glow rounded-xl">
@@ -130,7 +158,8 @@
             <input
               type="text"
               placeholder="John Doe"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20"
+            />
           </div>
 
           <div class="gold-glow rounded-xl">
@@ -140,7 +169,8 @@
             <input
               type="email"
               placeholder="name@company.com"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20"
+            />
           </div>
 
           <div class="gold-glow rounded-xl">
@@ -150,7 +180,8 @@
             <input
               type="password"
               placeholder="••••••••"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20"
+            />
           </div>
 
           <div class="gold-glow rounded-xl">
@@ -160,11 +191,13 @@
             <input
               type="password"
               placeholder="••••••••"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20"
+            />
           </div>
 
           <button
-            class="w-full h-14 rounded-xl bg-primary text-background-dark font-extrabold tracking-wide uppercase shadow-[0_0_25px_rgba(244,206,37,0.35)] hover:shadow-[0_0_35px_rgba(244,206,37,0.5)] transition-all active:scale-[0.97]">
+            class="w-full h-14 rounded-xl bg-primary text-background-dark font-extrabold tracking-wide uppercase shadow-[0_0_25px_rgba(244,206,37,0.35)] hover:shadow-[0_0_35px_rgba(244,206,37,0.5)] transition-all active:scale-[0.97]"
+          >
             Create Account
           </button>
         </div>
@@ -175,6 +208,7 @@
         By continuing, you agree to our
         <a href="#" class="underline hover:text-primary">Terms of Service</a>
       </p>
+
     </div>
   </main>
 
@@ -185,22 +219,24 @@
     const signinForm = document.getElementById("signinForm");
     const signupForm = document.getElementById("signupForm");
 
-    function switchTab(active, inactive, show, hide) {
-      active.classList.add("border-primary", "text-white");
-      active.classList.remove("text-white/40");
+    function setActiveTab(activeTab, inactiveTab, showForm, hideForm) {
+      activeTab.classList.add("active-tab");
+      inactiveTab.classList.remove("active-tab");
 
-      inactive.classList.remove("border-primary", "text-white");
-      inactive.classList.add("text-white/40");
+      activeTab.setAttribute("aria-selected", "true");
+      inactiveTab.setAttribute("aria-selected", "false");
 
-      show.classList.remove("hidden");
-      hide.classList.add("hidden");
+      showForm.classList.remove("hidden");
+      hideForm.classList.add("hidden");
     }
 
-    signinTab.onclick = () =>
-      switchTab(signinTab, signupTab, signinForm, signupForm);
+    signinTab.addEventListener("click", () =>
+      setActiveTab(signinTab, signupTab, signinForm, signupForm)
+    );
 
-    signupTab.onclick = () =>
-      switchTab(signupTab, signinTab, signupForm, signinForm);
+    signupTab.addEventListener("click", () =>
+      setActiveTab(signupTab, signinTab, signupForm, signinForm)
+    );
   </script>
 
 </body>
