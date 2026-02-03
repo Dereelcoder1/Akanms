@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>My Sites - AKANMS Sites Premium</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4ce25",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#1a1226",
+                        "accent-purple": "#2d1b4e",
+                        "glass-border": "rgba(244, 206, 37, 0.2)",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(244, 206, 37, 0.1);
+        }
+        .gold-glow {
+            text-shadow: 0 0 15px rgba(244, 206, 37, 0.4);
+        }
+        .bg-flare {
+            background: radial-gradient(circle at 0% 0%, rgba(244, 206, 37, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 100% 100%, rgba(244, 206, 37, 0.1) 0%, transparent 40%);
+        }
+        .site-card-hover:hover {
+            border-color: rgba(244, 206, 37, 0.4);
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen overflow-x-hidden">
+    <div class="relative flex min-h-screen w-full bg-flare">
+        <aside class="w-72 glass border-r border-glass-border fixed h-full flex flex-col z-20">
+            <div class="p-8 flex flex-col h-full">
+                <div class="flex items-center gap-4 mb-12">
+                    <div
+                        class="size-12 rounded-xl bg-primary flex items-center justify-center shadow-[0_0_20px_rgba(244,206,37,0.4)]">
+                        <span class="material-symbols-outlined text-background-dark font-bold text-3xl">diamond</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-xl font-extrabold tracking-tight leading-none">AKANMS</h1>
+                        <p class="text-primary text-[10px] uppercase tracking-[0.2em] font-bold">Premium Marketplace</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2 grow">
+                    <a href="dashboard.html"
+                        class="flex items-center gap-4 px-4 py-3 rounded-xl bg-primary/10 border border-primary/20 text-primary">
+                        <span class="material-symbols-outlined fill-1">dashboard</span>
+                        <p class="text-sm font-semibold">Overview</p>
+                    </a>
+
+                    <a href="sites.html"
+                        class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                        <span class="material-symbols-outlined">language</span>
+                        <p class="text-sm font-medium">My Sites</p>
+                    </a>
+
+                    <!-- <a href="billing.html"
+                        class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                        <span class="material-symbols-outlined">payments</span>
+                        <p class="text-sm font-medium">Billing</p>
+                    </a> -->
+
+                    <a href="security.html"
+                        class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                        <span class="material-symbols-outlined">verified_user</span>
+                        <p class="text-sm font-medium">Security</p>
+                    </a>
+
+                </nav>
+                <div class="mt-auto pt-6">
+                    <div class="glass p-4 rounded-xl border border-white/5 mb-6">
+                        <p class="text-xs text-slate-400 mb-2">Need assistance?</p>
+                        <button
+                            class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-2 rounded-lg text-sm transition-all shadow-lg shadow-primary/20">
+                            Support Center
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="size-10 rounded-full border-2 border-primary/30 p-0.5">
+                            <img alt="Client profile" class="w-full h-full rounded-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6uSpmZ4arhRzECYu871aiKDAkdD2hqy_Unosevcz8kDq-t9vyLvCn77_98X2bgPy_8DzY1_T8kwfHrGxzIVJa70Csu5KIA7AhgT4KraIgCQjggkgXsHDkWW1wtSwAK_KM8JTm0BgOLagvR_R9NdkmcdkmYlmaipl-4XNggY97N--ziOAYwkfAb-8EIy9n_QHgxZ6V49Cl0Bse7NnTUZwTEHsB9AY7VTq_BrUmkt8tkYWPTrYDcK4StU-ruwPWdNt6YzBFSSjosBE" />
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="text-sm font-bold">Julian V. Gold</p>
+                            <p class="text-[10px] text-primary font-bold uppercase tracking-wider">Elite Member</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <main class="flex-1 ml-72 p-12">
+            <header class="flex justify-between items-center mb-12">
+                <div class="relative w-full max-w-xl">
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/60">search</span>
+                    <input
+                        class="w-full bg-white/5 border-glass-border focus:border-primary focus:ring-primary/20 rounded-xl py-3 pl-12 pr-4 text-white placeholder:text-slate-500 transition-all"
+                        placeholder="Search your premium sites..." type="text" />
+                </div>
+                <button
+                    class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-background-dark px-6 py-3 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(244,206,37,0.3)]">
+                    <span class="material-symbols-outlined font-bold">rocket_launch</span>
+                    Deploy New Site
+                </button>
+            </header>
+            <div class="mb-8">
+                <h2 class="text-primary text-4xl font-black tracking-tight mb-2 gold-glow">My Managed Sites</h2>
+                <p class="text-slate-400">Manage, monitor, and scale your premium digital real estate.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                <div class="glass rounded-xl overflow-hidden site-card-hover flex flex-col">
+                    <div class="relative h-48 group">
+                        <img alt="Site preview"
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeyPmNNbUi6DqzPx6YL9yzJ7YXqMdmx7HFc5DE_7R-z0pWDOtf6JuLFwAsGTDSKoVKqFi12xiAc0T-XS1hNc8Jiumqc9Qgx1hDdBwH-qc1Ue9LpDGtSg2z8GQxqG6H2ZXZseCrEGp93C3QU6I6BRa5Xl1BSCBnlboTTcsmql7a4-NTNRMx11DGjMt9KPf4BZSjCC6oS7oHvm3vOFKJu8Av-akP4qLATHxOKiPpOZvjgtvxDlCoPM4pl1Sek887sAApsJCyXHMhEiY" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="px-3 py-1 bg-primary text-background-dark text-[10px] font-black uppercase rounded-full shadow-lg">Live</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-white text-xl font-bold mb-1">E-commerce Pro</h3>
+                                <p class="text-slate-400 text-xs font-mono">domain: luxury-shop.akn.ms</p>
+                            </div>
+                            <button class="text-slate-400 hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <span class="material-symbols-outlined text-emerald-400 text-sm">bolt</span>
+                            <span class="text-emerald-400 text-xs font-bold">99.9% Uptime</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 mt-auto">
+                            <button
+                                class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all border border-white/5">
+                                <span class="material-symbols-outlined text-primary text-xl">visibility</span>
+                                <span class="text-[10px] font-bold uppercase tracking-tighter">Visit</span>
+                            </button>
+                            <button
+                                class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all border border-white/5">
+                                <span class="material-symbols-outlined text-primary text-xl">settings</span>
+                                <span class="text-[10px] font-bold uppercase tracking-tighter">Manage</span>
+                            </button>
+                            <button
+                                class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all border border-white/5">
+                                <span class="material-symbols-outlined text-primary text-xl">autorenew</span>
+                                <span class="text-[10px] font-bold uppercase tracking-tighter">Renew</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-xl overflow-hidden site-card-hover flex flex-col">
+                    <div class="relative h-48 group">
+                        <img alt="Site preview"
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRjdahZ55BWNYNG-cL6F937xaCVtY_HvjintIubHHyDqzNEmOE8MXFNv7B6cxGhHWNWC_mw7NpXtP-qzLixKE7o85CH7fu-h4xRJE4HiU8jCbRD94dRIAlJLep9l1cZW1-5qAtxxSdQuwK30maeJoBlsNkNYvAt8xgYRfsDQscEkSGgGyfOAYSqLIS9N5tGh2uQWw8vWs0jRf0C4mFFBvpzazk3j7RJFLDSxSLadByNc1qwAT94aTAVJfp2yRjuscEFtYsylcfPkw" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="px-3 py-1 bg-accent-purple border border-primary/40 text-primary text-[10px] font-black uppercase rounded-full shadow-lg">Maintenance</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-white text-xl font-bold mb-1">Portfolio Elite</h3>
+                                <p class="text-slate-400 text-xs font-mono">domain: designer-v4.akn.ms</p>
+                            </div>
+                            <button class="text-slate-400 hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <span class="material-symbols-outlined text-primary text-sm">build</span>
+                            <span class="text-primary text-xs font-bold">Scheduled Update</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 mt-auto">
+                            <button
+                                class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all border border-white/5 opacity-50 cursor-not-allowed">
+                                <span class="material-symbols-outlined text-primary text-xl">visibility</span>
+                                <span class="text-[10px] font-bold uppercase tracking-tighter">Visit</span>
+                            </button>
+                            <button
+                                class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all border border-white/5">
+                                <span class="material-symbols-outlined text-primary text-xl">settings</span>
+                                <span class="text-[10px] font-bold uppercase tracking-tighter">Manage</span>
+                            </button>
+                            <button
+                                class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all border border-white/5">
+                                <span class="material-symbols-outlined text-primary text-xl">autorenew</span>
+                                <span class="text-[10px] font-bold uppercase tracking-tighter">Renew</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-xl overflow-hidden site-card-hover flex flex-col">
+                    <div class="relative h-48 group">
+                        <img alt="Site preview"
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3tBbB8PsDMpRQiYvhUIhEm_Xi9AntfvJdwC9fN38BiqOSKFyIlX0ZcG6y85uAyJdGr5eZTZJMyQd61r6sZniubBd70jCHbKI8FmyBvF8Lnb9Q5trE9vWji0Iz0Q3berB2oFSwEez9_i6UhPh8xHC0At538VPsRXdUhgNly92tC6bgwrW6SjEKCeLfBDGDwZ1I1aEkeVEZqDHf87THpkp6-vE2mH8FBBPvzTxbUVixd_ZYdz45sYgcjcJ_oEy5Av22o_v-BNJCqcw" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="px-3 py-1 bg-primary text-background-dark text-[10px] font-black uppercase rounded-full shadow-lg">Live</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-white text-xl font-bold mb-1">Analytics Dashboard</h3>
+                                <p class="text-slate-400 text-xs font-mono">domain: data-core.akn.ms</p>
+                            </div>
+                            <button class="text-slate-400 hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">more_vert</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <span class="material-symbols-outlined text-emerald-400 text-sm">trending_up</span>
+                            <span class="text-emerald-400 text-xs font-bold">+12% traffic boost</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 mt-auto">
+                            <button
+                                class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all border border-white/5">
+                                <span class="material-symbols-outlined text-primary text-xl">visibility</span>
+                                <span class="text-[10px] font-bold uppercase tracking-tighter">Visit</span>
+                            </button>
+                            <button
+                                class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all border border-white/5">
+                                <span class="material-symbols-outlined text-primary text-xl">settings</span>
+                                <span class="text-[10px] font-bold uppercase tracking-tighter">Manage</span>
+                            </button>
+                            <button
+                                class="flex flex-col items-center gap-1 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all border border-white/5">
+                                <span class="material-symbols-outlined text-primary text-xl">autorenew</span>
+                                <span class="text-[10px] font-bold uppercase tracking-tighter">Renew</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="glass rounded-xl border-dashed border-2 border-primary/20 hover:border-primary/50 transition-all flex flex-col items-center justify-center p-12 group cursor-pointer">
+                    <div
+                        class="size-16 rounded-full bg-primary/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-4xl">add</span>
+                    </div>
+                    <h4 class="text-white font-bold text-lg">Add New Site</h4>
+                    <p class="text-slate-500 text-sm text-center mt-2">Scale your network with a new premium deployment
+                    </p>
+                </div>
+            </div>
+        </main>
+        <div class="fixed top-[-10%] left-[-5%] w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="fixed bottom-[-10%] right-[-5%] w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+    </div>
+
+</body>
+
+</html>

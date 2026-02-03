@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +8,8 @@
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
   <script>
@@ -43,7 +45,7 @@
       position: absolute;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(244,206,37,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(244, 206, 37, 0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -89,19 +91,11 @@
 
         <!-- Tabs -->
         <div class="flex justify-center gap-14 border-b border-white/10 px-6">
-          <button
-            id="signinTab"
-            aria-selected="true"
-            class="tab-btn active-tab py-4 font-bold text-sm"
-          >
+          <button id="signinTab" aria-selected="true" class="tab-btn active-tab py-4 font-bold text-sm">
             Sign In
           </button>
 
-          <button
-            id="signupTab"
-            aria-selected="false"
-            class="tab-btn py-4 font-bold text-sm"
-          >
+          <button id="signupTab" aria-selected="false" class="tab-btn py-4 font-bold text-sm">
             Sign Up
           </button>
         </div>
@@ -113,22 +107,16 @@
             <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
               Email Address
             </p>
-            <input
-              type="email"
-              placeholder="name@company.com"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20"
-            />
+            <input type="email" placeholder="name@company.com"
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
           </div>
 
           <div class="gold-glow rounded-xl">
             <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
               Password
             </p>
-            <input
-              type="password"
-              placeholder="••••••••"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20"
-            />
+            <input type="password" placeholder="••••••••"
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
           </div>
 
           <div class="flex justify-between text-xs">
@@ -142,8 +130,7 @@
           </div>
 
           <button
-            class="w-full h-14 rounded-xl bg-primary text-background-dark font-extrabold tracking-wide uppercase shadow-[0_0_25px_rgba(244,206,37,0.35)] hover:shadow-[0_0_35px_rgba(244,206,37,0.5)] transition-all active:scale-[0.97]"
-          >
+            class="w-full h-14 rounded-xl bg-primary text-background-dark font-extrabold tracking-wide uppercase shadow-[0_0_25px_rgba(244,206,37,0.35)] hover:shadow-[0_0_35px_rgba(244,206,37,0.5)] transition-all active:scale-[0.97]">
             Access Marketplace
           </button>
         </div>
@@ -155,49 +142,36 @@
             <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
               Full Name
             </p>
-            <input
-              type="text"
-              placeholder="John Doe"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20"
-            />
+            <input type="text" placeholder="John Doe"
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
           </div>
 
           <div class="gold-glow rounded-xl">
             <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
               Email Address
             </p>
-            <input
-              type="email"
-              placeholder="name@company.com"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20"
-            />
+            <input type="email" placeholder="name@company.com"
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
           </div>
 
           <div class="gold-glow rounded-xl">
             <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
               Password
             </p>
-            <input
-              type="password"
-              placeholder="••••••••"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20"
-            />
+            <input type="password" placeholder="••••••••"
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
           </div>
 
           <div class="gold-glow rounded-xl">
             <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
               Confirm Password
             </p>
-            <input
-              type="password"
-              placeholder="••••••••"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20"
-            />
+            <input type="password" placeholder="••••••••"
+              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
           </div>
 
           <button
-            class="w-full h-14 rounded-xl bg-primary text-background-dark font-extrabold tracking-wide uppercase shadow-[0_0_25px_rgba(244,206,37,0.35)] hover:shadow-[0_0_35px_rgba(244,206,37,0.5)] transition-all active:scale-[0.97]"
-          >
+            class="w-full h-14 rounded-xl bg-primary text-background-dark font-extrabold tracking-wide uppercase shadow-[0_0_25px_rgba(244,206,37,0.35)] hover:shadow-[0_0_35px_rgba(244,206,37,0.5)] transition-all active:scale-[0.97]">
             Create Account
           </button>
         </div>
@@ -240,4 +214,5 @@
   </script>
 
 </body>
+
 </html>

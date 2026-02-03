@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Security Settings - AKANMS Sites</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4ce25",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#1a1226",
+                        "accent-purple": "#2d1b4e",
+                        "glass-border": "rgba(244, 206, 37, 0.2)",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+            .glass {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border: 1px solid rgba(244, 206, 37, 0.1);
+            }
+            .glass-gold-border {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(244, 206, 37, 0.3);
+                box-shadow: 0 0 20px rgba(244, 206, 37, 0.05);
+            }
+            .gold-glow {
+                text-shadow: 0 0 15px rgba(244, 206, 37, 0.4);
+            }
+            .bg-flare {
+                background: radial-gradient(circle at 0% 0%, rgba(244, 206, 37, 0.15) 0%, transparent 40%),
+                            radial-gradient(circle at 100% 100%, rgba(244, 206, 37, 0.1) 0%, transparent 40%);
+            }
+            .switch-checkbox:checked {
+                right: 0;
+                background-color: #f4ce25;
+            }
+            .switch-checkbox:checked + .switch-label {
+                background-color: rgba(244, 206, 37, 0.2);
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen overflow-x-hidden">
+    <div class="relative flex min-h-screen w-full bg-flare">
+        <aside class="w-72 glass border-r border-glass-border fixed h-full flex flex-col z-20">
+            <div class="p-8 flex flex-col h-full">
+                <div class="flex items-center gap-4 mb-12">
+                    <div
+                        class="size-12 rounded-xl bg-primary flex items-center justify-center shadow-[0_0_20px_rgba(244,206,37,0.4)]">
+                        <span class="material-symbols-outlined text-background-dark font-bold text-3xl">diamond</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-xl font-extrabold tracking-tight leading-none">AKANMS</h1>
+                        <p class="text-primary text-[10px] uppercase tracking-[0.2em] font-bold">Premium Marketplace</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-2 grow">
+                    <a href="dashboard.html"
+                        class="flex items-center gap-4 px-4 py-3 rounded-xl bg-primary/10 border border-primary/20 text-primary">
+                        <span class="material-symbols-outlined fill-1">dashboard</span>
+                        <p class="text-sm font-semibold">Overview</p>
+                    </a>
+
+                    <a href="sites.html"
+                        class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                        <span class="material-symbols-outlined">language</span>
+                        <p class="text-sm font-medium">My Sites</p>
+                    </a>
+
+                    <!-- <a href="billing.html"
+                        class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                        <span class="material-symbols-outlined">payments</span>
+                        <p class="text-sm font-medium">Billing</p>
+                    </a> -->
+
+                    <a href="security.html"
+                        class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                        <span class="material-symbols-outlined">verified_user</span>
+                        <p class="text-sm font-medium">Security</p>
+                    </a>
+
+
+                </nav>
+                <div class="mt-auto pt-6 border-t border-white/5">
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="size-10 rounded-full border-2 border-primary/30 p-0.5">
+                            <img class="w-full h-full rounded-full object-cover"
+                                data-alt="Client profile picture portrait"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoAjvcWyWPemjHeXL6YwQeCXKyq88KNMvCvWRp-3Mwucp3dn0obIafeEJNACR9CcgcanZnbhov2g_PWOcMPr_L6At5HWQj8X_2mN3rrCEYB1xz-NYq8lQ8XJCET6rlGVWsGr-nATGTnMtBqPlTMiR_ouPrcnzrq63iytDpPYOR8CPzTA8T7dD8pY0v0Ayk9dScX-JXB3cKVTTqMVgfgXmKj3p3bnUWOguHOm53AFGsaie9cF4hue3rSVRKJawPGvIIafp1vjDc5oQ" />
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="text-sm font-bold">Julian V. Gold</p>
+                            <p class="text-[10px] text-primary font-bold uppercase tracking-wider">Elite Member</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <main class="flex-1 ml-72 p-12">
+            <header class="flex justify-between items-start mb-12">
+                <div>
+                    <h2 class="text-primary text-5xl font-black tracking-tight mb-4 gold-glow">Security Center</h2>
+                    <p class="text-slate-400 text-lg leading-relaxed">Protect your high-end assets with enterprise-grade
+                        security protocols.</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-4 bg-primary/10 border border-primary/30 p-4 rounded-xl">
+                        <div class="size-10 rounded-full bg-primary/20 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">warning</span>
+                        </div>
+                        <div>
+                            <p class="text-white text-sm font-bold">New Login Detected</p>
+                            <p class="text-slate-400 text-xs">San Francisco, CA • 2m ago</p>
+                        </div>
+                        <button
+                            class="ml-4 text-primary text-xs font-bold uppercase tracking-widest hover:underline">Verify</button>
+                    </div>
+                </div>
+            </header>
+            <section class="glass-gold-border p-8 rounded-xl mb-12">
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <h3 class="text-white text-xl font-bold mb-1">Security Health Score</h3>
+                        <p class="text-slate-400 text-sm">Your account protection is at peak performance.</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-primary text-4xl font-black gold-glow">98%</span>
+                        <p class="text-primary text-[10px] uppercase font-bold tracking-widest mt-1">Excellent</p>
+                    </div>
+                </div>
+                <div class="relative h-3 w-full bg-white/5 rounded-full overflow-hidden">
+                    <div class="absolute top-0 left-0 h-full w-[98%] bg-primary shadow-[0_0_15px_rgba(244,206,37,0.5)]">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
+                        <p class="text-slate-300 text-xs font-medium">2FA Enabled</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
+                        <p class="text-slate-300 text-xs font-medium">Encrypted Storage</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
+                        <p class="text-slate-300 text-xs font-medium">Session Timeout Active</p>
+                    </div>
+                </div>
+            </section>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="glass-gold-border rounded-xl p-8">
+                        <h4 class="text-white text-lg font-bold mb-8 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">shield_person</span>
+                            Authentication &amp; Identity
+                        </h4>
+                        <div class="space-y-8">
+                            <div
+                                class="flex items-center justify-between p-6 rounded-xl bg-white/5 border border-white/5">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="size-12 rounded-xl bg-accent-purple/50 flex items-center justify-center border border-primary/20">
+                                        <span class="material-symbols-outlined text-primary">app_shortcut</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-white font-bold">Two-Factor Authentication</p>
+                                        <p class="text-slate-400 text-xs mt-1">Secure your account with an extra layer
+                                            of protection.</p>
+                                    </div>
+                                </div>
+                                <div class="relative inline-block w-12 mr-2 align-middle select-none">
+                                    <input checked=""
+                                        class="switch-checkbox absolute block w-6 h-6 rounded-full bg-slate-600 border-4 border-transparent appearance-none cursor-pointer transition-all duration-300 right-6"
+                                        id="toggle" name="toggle" type="checkbox" />
+                                    <label
+                                        class="switch-label block overflow-hidden h-6 rounded-full bg-white/10 cursor-pointer transition-colors duration-300 border border-white/10"
+                                        for="toggle"></label>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div
+                                    class="p-6 rounded-xl bg-white/5 border border-white/5 flex flex-col justify-between">
+                                    <div>
+                                        <p class="text-white font-bold mb-1">Update Password</p>
+                                        <p class="text-slate-400 text-xs">Last changed: 3 months ago</p>
+                                    </div>
+                                    <button
+                                        class="mt-6 w-full py-2 bg-white/5 hover:bg-white/10 text-white text-xs font-bold border border-white/10 rounded-lg transition-all">
+                                        Reset Password
+                                    </button>
+                                </div>
+                                <div
+                                    class="p-6 rounded-xl bg-white/5 border border-white/5 flex flex-col justify-between">
+                                    <div>
+                                        <p class="text-white font-bold mb-1">Authorized Devices</p>
+                                        <p class="text-slate-400 text-xs">3 active devices currently logged in</p>
+                                    </div>
+                                    <button
+                                        class="mt-6 w-full py-2 bg-white/5 hover:bg-white/10 text-white text-xs font-bold border border-white/10 rounded-lg transition-all">
+                                        Manage Devices
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-gold-border rounded-xl p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <h4 class="text-white text-lg font-bold flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">history</span>
+                                Login History
+                            </h4>
+                            <button
+                                class="text-primary text-xs font-bold uppercase tracking-widest hover:underline transition-all">Download
+                                Logs</button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead class="border-b border-white/10">
+                                    <tr>
+                                        <th class="pb-4 text-[10px] uppercase font-bold text-slate-400 tracking-widest">
+                                            Event</th>
+                                        <th class="pb-4 text-[10px] uppercase font-bold text-slate-400 tracking-widest">
+                                            Location</th>
+                                        <th class="pb-4 text-[10px] uppercase font-bold text-slate-400 tracking-widest">
+                                            IP Address</th>
+                                        <th class="pb-4 text-[10px] uppercase font-bold text-slate-400 tracking-widest">
+                                            Date &amp; Time</th>
+                                        <th class="pb-4 text-[10px] uppercase font-bold text-slate-400 tracking-widest">
+                                            Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-white/5">
+                                    <tr>
+                                        <td class="py-4 text-sm font-medium text-white">Dashboard Access</td>
+                                        <td class="py-4 text-sm text-slate-400">San Francisco, US</td>
+                                        <td class="py-4 text-sm font-mono text-primary/80">192.168.1.42</td>
+                                        <td class="py-4 text-sm text-slate-400">Oct 12, 14:22</td>
+                                        <td class="py-4">
+                                            <span
+                                                class="px-2 py-1 rounded-full bg-emerald-400/10 text-emerald-400 text-[10px] font-bold border border-emerald-400/20">Success</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-4 text-sm font-medium text-white">Profile Update</td>
+                                        <td class="py-4 text-sm text-slate-400">London, UK</td>
+                                        <td class="py-4 text-sm font-mono text-primary/80">45.22.112.8</td>
+                                        <td class="py-4 text-sm text-slate-400">Oct 10, 09:15</td>
+                                        <td class="py-4">
+                                            <span
+                                                class="px-2 py-1 rounded-full bg-emerald-400/10 text-emerald-400 text-[10px] font-bold border border-emerald-400/20">Success</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-4 text-sm font-medium text-white">Failed Login</td>
+                                        <td class="py-4 text-sm text-slate-400">Moscow, RU</td>
+                                        <td class="py-4 text-sm font-mono text-primary/80">82.12.245.1</td>
+                                        <td class="py-4 text-sm text-slate-400">Oct 08, 22:45</td>
+                                        <td class="py-4">
+                                            <span
+                                                class="px-2 py-1 rounded-full bg-red-400/10 text-red-400 text-[10px] font-bold border border-red-400/20">Blocked</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="glass-gold-border rounded-xl p-8">
+                        <h4 class="text-white text-lg font-bold mb-6">Security Notifications</h4>
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-lg bg-white/5 border border-white/5">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="material-symbols-outlined text-primary text-sm">mail</span>
+                                    <p class="text-white text-xs font-bold">Email Alerts</p>
+                                </div>
+                                <p class="text-slate-400 text-[11px]">Receive emails for unusual login attempts or
+                                    security changes.</p>
+                            </div>
+                            <div class="p-4 rounded-lg bg-white/5 border border-white/5">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="material-symbols-outlined text-primary text-sm">sms</span>
+                                    <p class="text-white text-xs font-bold">SMS Notifications</p>
+                                </div>
+                                <p class="text-slate-400 text-[11px]">Get real-time SMS codes for critical account
+                                    actions.</p>
+                            </div>
+                        </div>
+                        <button
+                            class="mt-6 w-full py-3 bg-primary text-background-dark font-bold rounded-xl text-sm transition-all hover:bg-primary/90 shadow-lg shadow-primary/20">
+                            Update Preferences
+                        </button>
+                    </div>
+                    <div class="glass p-8 rounded-xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <span class="material-symbols-outlined text-6xl">key</span>
+                        </div>
+                        <p class="text-slate-400 text-[10px] uppercase font-bold tracking-widest mb-2">Encryption Key
+                        </p>
+                        <h3 class="text-white text-xl font-black mb-4 tracking-tighter">RSA-4096 BIT</h3>
+                        <div
+                            class="flex items-center gap-2 text-primary text-xs font-bold cursor-pointer hover:underline">
+                            <span>Renew Master Key</span>
+                            <span class="material-symbols-outlined text-sm">chevron_right</span>
+                        </div>
+                    </div>
+                    <div class="glass p-8 rounded-xl border-emerald-500/20">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="size-2 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_8px_#34d399]">
+                            </div>
+                            <p class="text-emerald-400 text-[10px] uppercase font-black tracking-widest">Active
+                                Protection</p>
+                        </div>
+                        <p class="text-white text-sm font-bold mb-2">Anti-DDoS Shield</p>
+                        <p class="text-slate-400 text-xs leading-relaxed">Your rented sites are currently under the
+                            protection of our global traffic filtering network.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="fixed top-[-10%] left-[-5%] w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="fixed bottom-[-10%] right-[-5%] w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+    </div>
+
+</body>
+
+</html>
