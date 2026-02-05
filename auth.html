@@ -1,218 +1,183 @@
 <!DOCTYPE html>
+
 <html class="dark" lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AKANMS Sites | Premium Access</title>
-
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Elite Account Registration | AKANMS Sites</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
     rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
-  <script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           colors: {
-            primary: "#f4ce25",
-            "background-dark": "#1a1625",
+            "primary": "#f4ce25",
+            "background-light": "#f8f8f5",
+            "background-dark": "#1a0b2e", // Deep purple for the elite theme
           },
           fontFamily: {
-            display: ["Manrope", "sans-serif"],
+            "display": ["Manrope", "sans-serif"]
           },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
         },
       },
-    };
+    }
   </script>
-
   <style>
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: radial-gradient(circle at top right, #3b1464, #1a0b2e 60%);
+    }
+
     .glass-card {
-      background: rgba(40, 32, 60, 0.45);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(244, 206, 37, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     }
 
-    .gold-glow:focus-within {
-      box-shadow: 0 0 18px rgba(244, 206, 37, 0.3);
+    .glass-input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(244, 206, 37, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .glass-input:focus {
       border-color: #f4ce25;
-    }
-
-    .light-leak {
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(244, 206, 37, 0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    /* Tabs */
-    .tab-btn {
-      border-bottom: 3px solid transparent;
-      color: rgba(255, 255, 255, 0.4);
-      transition: all 0.25s ease;
-    }
-
-    .tab-btn:hover {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    .active-tab {
-      border-bottom-color: #f4ce25;
-      color: #ffffff;
+      box-shadow: 0 0 10px rgba(244, 206, 37, 0.2);
+      background: rgba(255, 255, 255, 0.08);
     }
   </style>
 </head>
 
-<body class="bg-background-dark font-display min-h-screen relative overflow-hidden">
-
-  <!-- Background glow -->
-  <div class="light-leak -top-40 -left-40"></div>
-  <div class="light-leak -bottom-40 -right-40"></div>
-
-  <main class="min-h-screen flex items-center justify-center px-4">
-    <div class="w-full max-w-[480px]">
-
-      <!-- Header -->
-      <div class="mb-8 text-center">
-        <h1 class="text-white text-3xl font-extrabold tracking-tight">
-          Experience Premium Rentals
-        </h1>
-        <p class="text-white/60 text-sm mt-2">
-          Access the world's most exclusive digital real estate
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-white font-display">
+  <!-- Navigation Overlay -->
+  <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 lg:px-20 py-6">
+    <div class="flex items-center gap-3">
+      <div class="size-8 text-primary">
+        <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
+            fill="currentColor"></path>
+        </svg>
+      </div>
+      <h2 class="text-xl font-extrabold tracking-tight uppercase">AKANMS <span class="text-primary">Sites</span></h2>
+    </div>
+    <!-- <div class="hidden md:flex items-center gap-8">
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Browse Sites</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
+      <a class="text-sm font-medium hover:text-primary transition-colors" href="#">About</a>
+    </div> -->
+  </header>
+  <main class="relative flex flex-col items-center justify-center min-h-screen pt-24 pb-12 px-4 overflow-hidden">
+    <!-- Abstract background elements -->
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+    <div class="absolute top-1/2 -right-24 w-80 h-80 bg-purple-600/20 rounded-full blur-[100px]"></div>
+    <!-- Registration Card -->
+    <div class="glass-card w-full max-w-[520px] rounded-xl p-8 lg:p-12 relative overflow-hidden group">
+      <!-- Glass Shine Effect -->
+      <div
+        class="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none">
+      </div>
+      <div class="text-center mb-10">
+        <h1 class="text-primary text-4xl font-extrabold tracking-tight mb-3">Join the Elite</h1>
+        <p class="text-white/60 text-base leading-relaxed">Register your premium account to access exclusive digital
+          assets and elite marketplace features.</p>
+      </div>
+      <form class="space-y-6">
+        <!-- Full Name -->
+        <div class="space-y-2">
+          <label class="text-sm font-semibold text-primary/80 uppercase tracking-wider ml-1">Full Name</label>
+          <div class="relative">
+            <span
+              class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-xl">person</span>
+            <input
+              class="glass-input w-full h-14 pl-12 pr-4 rounded-lg text-white focus:outline-none placeholder:text-white/20"
+              placeholder="Enter your full name" type="text" />
+          </div>
+        </div>
+        <!-- Email Address -->
+        <div class="space-y-2">
+          <label class="text-sm font-semibold text-primary/80 uppercase tracking-wider ml-1">Email Address</label>
+          <div class="relative">
+            <span
+              class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-xl">mail</span>
+            <input
+              class="glass-input w-full h-14 pl-12 pr-4 rounded-lg text-white focus:outline-none placeholder:text-white/20"
+              placeholder="name@example.com" type="email" />
+          </div>
+        </div>
+        <!-- Password Row -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label class="text-sm font-semibold text-primary/80 uppercase tracking-wider ml-1">Password</label>
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-xl">lock</span>
+              <input
+                class="glass-input w-full h-14 pl-12 pr-4 rounded-lg text-white focus:outline-none placeholder:text-white/20"
+                placeholder="••••••••" type="password" />
+            </div>
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-semibold text-primary/80 uppercase tracking-wider ml-1">Confirm</label>
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 text-xl">lock_reset</span>
+              <input
+                class="glass-input w-full h-14 pl-12 pr-4 rounded-lg text-white focus:outline-none placeholder:text-white/20"
+                placeholder="••••••••" type="password" />
+            </div>
+          </div>
+        </div>
+        <!-- Terms -->
+        <div class="flex items-center gap-3 pt-2">
+          <label class="relative flex items-center cursor-pointer">
+            <input
+              class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-primary/40 bg-transparent transition-all checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0"
+              type="checkbox" />
+            <span
+              class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[16px] text-[#231f10] font-bold opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+          </label>
+          <span class="text-sm text-white/70">
+            I agree to the <a class="text-primary hover:underline underline-offset-4" href="#">Terms of Service</a> and
+            <a class="text-primary hover:underline underline-offset-4" href="#">Privacy Policy</a>
+          </span>
+        </div>
+        <!-- Submit Button -->
+        <button
+          class="w-full bg-primary hover:bg-primary/90 text-[#231f10] font-extrabold text-lg py-4 rounded-lg shadow-lg shadow-primary/20 transition-all duration-300 transform hover:-translate-y-1 active:scale-[0.98]"
+          type="submit">
+          Create Premium Account
+        </button>
+      </form>
+      <div class="mt-10 text-center">
+        <p class="text-white/50">
+          Already have an account?
+          <a class="text-primary font-bold hover:underline underline-offset-4 ml-1" href="login.html">Sign In</a>
         </p>
       </div>
-
-      <!-- Card -->
-      <div class="glass-card rounded-xl shadow-2xl">
-
-        <!-- Tabs -->
-        <div class="flex justify-center gap-14 border-b border-white/10 px-6">
-          <button id="signinTab" aria-selected="true" class="tab-btn active-tab py-4 font-bold text-sm">
-            Sign In
-          </button>
-
-          <button id="signupTab" aria-selected="false" class="tab-btn py-4 font-bold text-sm">
-            Sign Up
-          </button>
-        </div>
-
-        <!-- SIGN IN FORM -->
-        <div id="signinForm" class="px-6 py-6 space-y-6">
-
-          <div class="gold-glow rounded-xl">
-            <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
-              Email Address
-            </p>
-            <input type="email" placeholder="name@company.com"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
-          </div>
-
-          <div class="gold-glow rounded-xl">
-            <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
-              Password
-            </p>
-            <input type="password" placeholder="••••••••"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
-          </div>
-
-          <div class="flex justify-between text-xs">
-            <label class="flex items-center gap-2 text-white/50">
-              <input type="checkbox" class="rounded bg-white/10 border-white/20 text-primary" />
-              Remember me
-            </label>
-            <a href="#" class="text-primary hover:underline font-bold">
-              Forgot password?
-            </a>
-          </div>
-
-          <button
-            class="w-full h-14 rounded-xl bg-primary text-background-dark font-extrabold tracking-wide uppercase shadow-[0_0_25px_rgba(244,206,37,0.35)] hover:shadow-[0_0_35px_rgba(244,206,37,0.5)] transition-all active:scale-[0.97]">
-            Access Marketplace
-          </button>
-        </div>
-
-        <!-- SIGN UP FORM -->
-        <div id="signupForm" class="hidden px-6 py-6 space-y-6">
-
-          <div class="gold-glow rounded-xl">
-            <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
-              Full Name
-            </p>
-            <input type="text" placeholder="John Doe"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
-          </div>
-
-          <div class="gold-glow rounded-xl">
-            <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
-              Email Address
-            </p>
-            <input type="email" placeholder="name@company.com"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
-          </div>
-
-          <div class="gold-glow rounded-xl">
-            <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
-              Password
-            </p>
-            <input type="password" placeholder="••••••••"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
-          </div>
-
-          <div class="gold-glow rounded-xl">
-            <p class="text-xs font-bold uppercase tracking-widest text-white/80 mb-2">
-              Confirm Password
-            </p>
-            <input type="password" placeholder="••••••••"
-              class="w-full h-14 rounded-xl bg-white/5 border border-white/10 text-white px-4 placeholder:text-white/20" />
-          </div>
-
-          <button
-            class="w-full h-14 rounded-xl bg-primary text-background-dark font-extrabold tracking-wide uppercase shadow-[0_0_25px_rgba(244,206,37,0.35)] hover:shadow-[0_0_35px_rgba(244,206,37,0.5)] transition-all active:scale-[0.97]">
-            Create Account
-          </button>
-        </div>
-
-      </div>
-
-      <p class="text-center text-white/40 text-xs mt-6">
-        By continuing, you agree to our
-        <a href="#" class="underline hover:text-primary">Terms of Service</a>
-      </p>
-
     </div>
+    <!-- Footer Text -->
+    <footer class="mt-12 text-center text-white/30 text-xs uppercase tracking-[0.2em] font-medium">
+      © 2024 AKANMS SITES • SECURE REGISTRATION • SSL ENCRYPTED
+    </footer>
   </main>
-
-  <!-- JS -->
-  <script>
-    const signinTab = document.getElementById("signinTab");
-    const signupTab = document.getElementById("signupTab");
-    const signinForm = document.getElementById("signinForm");
-    const signupForm = document.getElementById("signupForm");
-
-    function setActiveTab(activeTab, inactiveTab, showForm, hideForm) {
-      activeTab.classList.add("active-tab");
-      inactiveTab.classList.remove("active-tab");
-
-      activeTab.setAttribute("aria-selected", "true");
-      inactiveTab.setAttribute("aria-selected", "false");
-
-      showForm.classList.remove("hidden");
-      hideForm.classList.add("hidden");
-    }
-
-    signinTab.addEventListener("click", () =>
-      setActiveTab(signinTab, signupTab, signinForm, signupForm)
-    );
-
-    signupTab.addEventListener("click", () =>
-      setActiveTab(signupTab, signinTab, signupForm, signinForm)
-    );
-  </script>
-
+  <!-- Decorative background image pattern (subtle) -->
+  <div class="fixed inset-0 pointer-events-none z-[-1] opacity-10">
+    <img alt="" class="w-full h-full object-cover" data-alt="Abstract dark purple and gold geometric background pattern"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2YJZ3CVgD-NFnaTpIRfLvy6j-7PA2yD4GdgXBCSJkqfzYKuNXWedR0QbWY0bwr6Uj12jul-ibK6EdjO-EZ_7p3EOlt3QjmlyLR3bTeEVsAUNE7__2pWFFFPFuhzU43QMwMqPRxemf8LFZLV1tIJudvJzCXxvYFR1VgQf0v4-tLEZGaQN-yT-qpyA0cjQnn8QmGHoHE7ceWYlCGXDJ2mP_hqQ6uJWw5MGTCPPIkY9rgCCkAcrEilN5jzcdFmKH4f3Jz1kNGis1U8I" />
+  </div>
 </body>
 
 </html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Exclusive Sign In | AKANMS Sites</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4ce25",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0f051d", // Deep royal purple base
+                        "royal-purple": "#1a0b2e",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(26, 11, 46, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(244, 206, 37, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        .gold-glow:focus-within {
+            box-shadow: 0 0 15px rgba(244, 206, 37, 0.3);
+            border-color: #f4ce25 !important;
+        }
+
+        .bg-mesh {
+            background-color: #0f051d;
+            background-image:
+                radial-gradient(circle at 20% 20%, rgba(244, 206, 37, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(244, 206, 37, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(26, 11, 46, 1) 0%, #0f051d 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-mesh min-h-screen flex items-center justify-center p-6">
+    <!-- Decorative Background Flares -->
+    <div
+        class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full pointer-events-none">
+    </div>
+    <div
+        class="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/5 blur-[120px] rounded-full pointer-events-none">
+    </div>
+    <div class="relative w-full max-w-[460px] animate-fade-in">
+        <!-- Main Glass Card -->
+        <div class="glass-card rounded-xl p-10 flex flex-col items-center">
+            <!-- Brand Logo -->
+            <div class="flex flex-col items-center gap-2 mb-10 group cursor-default">
+                <div
+                    class="size-14 text-primary bg-primary/10 rounded-xl flex items-center justify-center border border-primary/30 shadow-[0_0_20px_rgba(244,206,37,0.2)]">
+                    <svg class="w-10 h-10" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z">
+                        </path>
+                    </svg>
+                </div>
+                <h1 class="text-white text-2xl font-extrabold tracking-[0.15em] uppercase mt-2">AKANMS <span
+                        class="text-primary">Sites</span></h1>
+                <div class="h-[1px] w-12 bg-primary/50 rounded-full"></div>
+            </div>
+            <!-- Header Text -->
+            <div class="w-full mb-8 text-center">
+                <h2 class="text-white text-2xl font-bold tracking-tight">Welcome Back</h2>
+                <p class="text-white/50 text-sm mt-1">Please enter your details to sign in</p>
+            </div>
+            <!-- Form -->
+            <form class="w-full space-y-5">
+                <!-- Email Field -->
+                <div class="flex flex-col gap-1.5 gold-glow rounded-lg transition-all duration-300">
+                    <label class="text-primary/80 text-xs font-bold uppercase tracking-wider pl-1">Email Address</label>
+                    <div class="relative flex items-center">
+                        <span class="material-symbols-outlined absolute left-4 text-white/30 text-[20px]">mail</span>
+                        <input
+                            class="w-full bg-[#1a0b2e]/40 border border-white/10 rounded-lg py-3.5 pl-11 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-0 transition-all text-sm"
+                            placeholder="name@company.com" type="email" />
+                    </div>
+                </div>
+                <!-- Password Field -->
+                <div class="flex flex-col gap-1.5 gold-glow rounded-lg transition-all duration-300">
+                    <div class="flex justify-between items-end px-1">
+                        <label class="text-primary/80 text-xs font-bold uppercase tracking-wider">Password</label>
+                        <a class="text-primary/60 hover:text-primary text-[11px] font-bold transition-colors uppercase tracking-tighter"
+                            href="#">Forgot Password?</a>
+                    </div>
+                    <div class="relative flex items-center">
+                        <span class="material-symbols-outlined absolute left-4 text-white/30 text-[20px]">lock</span>
+                        <input
+                            class="w-full bg-[#1a0b2e]/40 border border-white/10 rounded-lg py-3.5 pl-11 pr-12 text-white placeholder:text-white/20 focus:outline-none focus:ring-0 transition-all text-sm"
+                            placeholder="••••••••" type="password" />
+                        <button class="absolute right-4 text-white/30 hover:text-primary transition-colors"
+                            type="button">
+                            <span class="material-symbols-outlined text-[20px]">visibility</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Remember Me -->
+                <div class="flex items-center gap-2 px-1">
+                    <input
+                        class="w-4 h-4 rounded border-white/10 bg-white/5 text-primary focus:ring-primary focus:ring-offset-background-dark"
+                        id="remember" type="checkbox" />
+                    <label class="text-white/60 text-xs cursor-pointer select-none" for="remember">Remember this
+                        device</label>
+                </div>
+                <!-- Sign In Button -->
+                <button
+                    class="w-full bg-primary hover:bg-primary/90 text-background-dark font-extrabold text-sm py-4 rounded-lg transition-all transform active:scale-[0.98] shadow-[0_4px_20px_rgba(244,206,37,0.3)] mt-2 uppercase tracking-widest"
+                    type="submit">
+                    Sign In
+                </button>
+            </form>
+            <!-- Social Logins Divider -->
+            <div class="w-full flex items-center gap-4 my-8">
+                <div class="h-[1px] grow bg-white/10"></div>
+                <span class="text-white/20 text-[10px] font-bold uppercase tracking-[0.2em]">OR</span>
+                <div class="h-[1px] grow bg-white/10"></div>
+            </div>
+            <!-- Alternative Auth -->
+            <div class="flex gap-4 w-full">
+                <button
+                    class="flex-1 flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white py-3 rounded-lg transition-all text-xs font-bold">
+                    <img alt="Google" class="w-4 h-4" data-alt="Google colorful logo"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_wlmQ_Wyex_D6F6P7OAhWPG-6cP-E4vFE32_PfIQ6DRsu7aSGdqcXTpHt9c5VLTPv88BiOJNPZkHN_DljIdvr0v1w7DokPgW6tuFzMObEMdf2Ut5CwJ0UuPvxN05oVi_w5KCQLiYhuyVTtylFzTs4laO--hm22fURMaUpyXAS2i4zTVtvzLpmFuaceYZOdScCj17vVCe4YwJ9vlQ-PDvEKa42l6SW3SSRSdJhgzvjFnfu-CDt4zVOQEYCu4kSw_qJQlB_lLuno2g" />
+                    Google
+                </button>
+                <button
+                    class="flex-1 flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white py-3 rounded-lg transition-all text-xs font-bold">
+                    <img alt="GitHub" class="w-4 h-4 invert" data-alt="Github minimalist white logo"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDqBRmVwI8BkZ_1w8qio34Rs6_pdjN5-_bRYljZIi5h-1pB5bEN4qDMWCNcysgLag8fM64U_GTJuuodvXkZmjbuZ8T5_Zf-je1VZcbwXFcCAtd4-nmSCoGJKUdT5xn4_EYHudxRgsTq_zKIOddieTUbtjKJQgUUOCpTtbdXDZV0XRkFXGKKOn6n0yrBKpoyn7XF0gYJL3Xhjp9DUKUWcrLGWlrAlI_imebsJPoOJ9QleiQx70nXZgygmI6KcOH_Tvm6tNk-ae8woU" />
+                    GitHub
+                </button>
+            </div>
+            <!-- Footer -->
+            <p class="text-white/50 text-xs mt-10">
+                Don't have an account?
+                <a class="text-primary font-bold hover:underline underline-offset-4 ml-1" href="auth.html">Sign Up Now</a>
+            </p>
+        </div>
+        <!-- Utility Footer -->
+        <div class="mt-8 flex justify-center gap-6 text-[10px] uppercase tracking-[0.2em] text-white/30 font-bold">
+            <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+            <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+            <a class="hover:text-primary transition-colors" href="#">Support</a>
+        </div>
+    </div>
+    <!-- Decorative Image / Mask (Hidden on smaller screens) -->
+    <div class="hidden xl:block fixed top-1/2 left-20 -translate-y-1/2 opacity-20 pointer-events-none">
+        <div class="text-white/10 text-[20rem] font-black select-none leading-none">AK</div>
+    </div>
+    <div class="hidden xl:block fixed top-1/2 right-20 -translate-y-1/2 opacity-20 pointer-events-none">
+        <div class="text-white/10 text-[20rem] font-black select-none leading-none">MS</div>
+    </div>
+</body>
+
+</html>
